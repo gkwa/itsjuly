@@ -45,17 +45,17 @@ func TestCustomLogger(t *testing.T) {
 }
 
 func TestJSONLogger(t *testing.T) {
-	oldVerbose, oldLogFormat := verbose, logFormat
-	verbose, logFormat = true, "json"
+	oldVerbosity, oldLogFormat := verbosity, logFormat
+	verbosity, logFormat = 1, "json"
 	defer func() {
-		verbose, logFormat = oldVerbose, oldLogFormat
+		verbosity, logFormat = oldVerbosity, oldLogFormat
 	}()
 
 	oldStderr := os.Stderr
 	r, w, _ := os.Pipe()
 	os.Stderr = w
 
-	customLogger := logger.NewConsoleLogger(verbose, logFormat == "json")
+	customLogger := logger.NewConsoleLogger(verbosity, logFormat == "json")
 	cliLogger = customLogger
 
 	cmd := rootCmd
