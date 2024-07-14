@@ -5,6 +5,7 @@ import (
 )
 
 func Hello(logger logr.Logger) {
+	logger.Info("Hello, World!")
 	logger.V(1).Info("Debug: Entering Hello function")
 	logger.V(2).Info("Debug: level 2")
 	logger.V(3).Info("Debug: level 3")
