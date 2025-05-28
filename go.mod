@@ -6,7 +6,7 @@ toolchain go1.24.3
 
 require (
 	github.com/go-git/go-git/v5 v5.16.0
-	github.com/go-logr/logr v1.4.2
+	github.com/go-logr/logr v1.4.3
 	github.com/go-logr/zapr v1.3.0
 	github.com/magefile/mage v1.15.0
 	github.com/spf13/cobra v1.9.1
